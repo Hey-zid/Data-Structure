@@ -1,0 +1,12 @@
+Assignment 
+Your task is to design a Doubly linked list. 
+● Define a structure for the doubly linked node, and define two global pointers “head” and "tail." 
+● Create a Menu where users will have six options. You will ask an input from the user about the user’s choice. 
+1. Define a function named Insert(position) that will insert a new node at the given position of the linked list. Note that you must update head/tail if node refers to the same node as head/tail. 
+2. Define a function named search(key) that will take a value and search for it in the linked list. If found then print “Found”, otherwise print “Not Found”. 
+3. Define a function named remove(key) that will take a value and delete it from the list if found. Note that you 
+must update head/tail if node refers to the same node as head/tail. 
+4. Define a function named middle() that will find the middle node of the linked list. 
+5. Define a function named display() that will display the linked list. 
+6. END the program.
+
