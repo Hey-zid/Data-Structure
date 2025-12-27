@@ -13,10 +13,10 @@ void Addition()
     struct variable variable1,variable2,variable3;
 
     variable1.real = 5;
-    variable1.imaginary = 3.5;
+    variable1.imaginary = 6;
 
-    variable2.real = 3;
-    variable2.imaginary = 5.5;
+    variable2.real = 7;
+    variable2.imaginary = 5;
 
     variable3.real = variable1.real + variable2.real;
     variable3.imaginary =variable1.imaginary +variable2.imaginary ;
@@ -45,18 +45,26 @@ void Substruction()
 
 void multiplication()
 {
-    struct variable variable1,variable2,variable3;
+    struct variable variable1,variable2,variable3,variable4,variable5;
 
     variable1.real = 5;
-    variable1.imaginary = 3.5;
+    variable1.imaginary = 6;
 
-    variable2.real = 3;
-    variable2.imaginary = 5.5;
+    variable2.real = 7;
+    variable2.imaginary = -5;
 
     variable3.real = variable1.real * variable2.real;
     variable3.imaginary =variable1.imaginary *variable2.imaginary ;
 
-    cout<<variable3.real<<" "<<variable3.imaginary;
+    variable4.real = variable1.real * variable2.imaginary ;
+    variable4.imaginary = variable1.imaginary * variable2.real ;
+
+    variable5.real = variable3.real + (variable3.imaginary* -1);
+    variable5.imaginary =  variable4.real + variable4.imaginary;
+
+
+
+    cout<<variable5.real<<" "<<variable5.imaginary;
 
 }
 
