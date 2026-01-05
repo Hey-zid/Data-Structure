@@ -1,123 +1,79 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-//Global Structure
-struct variable
-{
+// Structure for Complex Number
+struct Complex {
     float real;
     float imaginary;
 };
 
-void Addition()
-{
-    struct variable variable1,variable2,variable3;
+// Function for Addition
+void Addition(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imaginary = a.imaginary + b.imaginary;
 
-    variable1.real = 5;
-    variable1.imaginary = 6;
-
-    variable2.real = 7;
-    variable2.imaginary = 5;
-
-    variable3.real = variable1.real + variable2.real;
-    variable3.imaginary =variable1.imaginary +variable2.imaginary ;
-
-    cout<<variable3.real<<" + "<<variable3.imaginary<<"i";
-
+    cout << result.real << " + " << result.imaginary << "i";
 }
 
-void Substruction()
-{
-    struct variable variable1,variable2,variable3;
+// Function for Subtraction
+void Subtraction(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real - b.real;
+    result.imaginary = a.imaginary - b.imaginary;
 
-    variable1.real = 5;
-    variable1.imaginary = 6;
-
-    variable2.real = 7;
-    variable2.imaginary = 5;
-
-    variable3.real = variable1.real - variable2.real;
-    variable3.imaginary =variable1.imaginary - variable2.imaginary ;
-
-    cout<<variable3.real<<" + "<<variable3.imaginary<<"i";
-
+    cout << result.real << " + " << result.imaginary << "i";
 }
 
+// Function for Multiplication
+void Multiplication(Complex a, Complex b) {
+    Complex result;
+    result.real = (a.real * b.real) - (a.imaginary * b.imaginary);
+    result.imaginary = (a.real * b.imaginary) + (a.imaginary * b.real);
 
-void multiplication()
-{
-    struct variable variable1,variable2,variable3,variable4,variable5;
-
-    variable1.real = 5;
-    variable1.imaginary = 6;
-
-    variable2.real = 7;
-    variable2.imaginary = -5;
-
-    variable3.real = variable1.real * variable2.real;
-    variable3.imaginary =variable1.imaginary *variable2.imaginary ;
-
-    variable4.real = variable1.real * variable2.imaginary ;
-    variable4.imaginary = variable1.imaginary * variable2.real ;
-
-    variable5.real = variable3.real + (variable3.imaginary* -1);
-    variable5.imaginary =  variable4.real + variable4.imaginary;
-
-
-
-    cout<<variable5.real<<" + "<<variable5.imaginary<<"i";
-
+    cout << result.real << " + " << result.imaginary << "i";
 }
 
-void division()
-{
-    struct variable variable1,variable2,variable3,variable4,variable5,variable6,variable7,variable8,variable9;
+// Function for Division
+void Division(Complex a, Complex b) {
+    Complex result;
+    float denominator = (b.real * b.real) + (b.imaginary * b.imaginary);
 
-    variable1.real = 5;
-    variable1.imaginary = 6;
+    result.real =
+        (a.real * b.real + a.imaginary * b.imaginary) / denominator;
 
-    variable2.real = 7;
-    variable2.imaginary = 5;
+    result.imaginary =
+        (a.imaginary * b.real - a.real * b.imaginary) / denominator;
 
-    variable3.real = variable1.real * variable2.real;
-    variable3.imaginary =variable1.real * (variable2.imaginary*-1) ;
-
-    variable4.real = variable1.imaginary * variable2.real;
-    variable4.imaginary =variable1.imaginary * (variable2.imaginary*-1) ;
-
-    variable5.real = variable3.real - variable4.imaginary;
-    variable5.imaginary =variable3.imaginary + variable4.real ;
-
-    variable6.real = variable2.real * variable2.real;
-    variable6.imaginary =variable2.real * (variable2.imaginary*-1) ;
-
-    variable7.real = variable2.imaginary * variable2.real;
-    variable7.imaginary =variable2.imaginary * (variable2.imaginary*-1) ;
-
-    variable8.real =variable6.real + (variable7.imaginary*-1) ;
-
-    variable9.real = variable5.real/variable8.real ;
-    variable9.imaginary = variable5.imaginary/variable8.real;
-
-    cout<<variable9.real<<" + "<<variable9.imaginary<<"i";
-
+    cout << result.real << " + " << result.imaginary << "i";
 }
 
+int main() {
+    Complex c1, c2;
 
+    cout << "Enter first complex number:\n";
+    cout << "Real part: ";
+    cin >> c1.real;
+    cout << "Imaginary part: ";
+    cin >> c1.imaginary;
 
-int main()
-{
-    cout<<"Addition : ";
-    Addition();
-    cout<<endl<<endl;
-    cout<<"Substruction : ";
-    Substruction();
-    cout<<endl<<endl;
-    cout<<"multiplication : ";
-    multiplication();
-    cout<<endl<<endl;
-    cout<<"division : ";
-    division();
-    cout<<endl<<endl;
+    cout << "\nEnter second complex number:\n";
+    cout << "Real part: ";
+    cin >> c2.real;
+    cout << "Imaginary part: ";
+    cin >> c2.imaginary;
+
+    cout << "\nAddition: ";
+    Addition(c1, c2);
+
+    cout << "\nSubtraction: ";
+    Subtraction(c1, c2);
+
+    cout << "\nMultiplication: ";
+    Multiplication(c1, c2);
+
+    cout << "\nDivision: ";
+    Division(c1, c2);
+
+    return 0;
 }
-
-
